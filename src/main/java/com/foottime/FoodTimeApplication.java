@@ -6,10 +6,10 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 
 @SpringBootApplication
-public class FootTimeApplication extends WebMvcConfigurationSupport {
+public class FoodTimeApplication extends WebMvcConfigurationSupport {
 
 	public static void main(String[] args) {
-		SpringApplication.run(FootTimeApplication.class, args);
+		SpringApplication.run(FoodTimeApplication.class, args);
 	}
 
 	@Override
