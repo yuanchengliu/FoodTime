@@ -1,0 +1,42 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/customer?useSSL=true&serverTimezone=UTC&useUnicode=true&characterEncoding=utf8
+    username: root
+    password: 123456
+
+  auto:
+    openurl: true
+  web:
+
+#    googleexcute: C:\Program Files\Google\Chrome\Application\\chrome.exe
+    edge: C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe
+
+    loginurl: http://localhost:8080/doc.html
+
+  mvc:
+    static-path-pattern: /static/**
+  thymeleaf:
+    prefix: classpath:/templates/
+mybatis-plus:
+  global-config:
+    db-config:
+      id-type: assign_id
+  mapper-locations: classpath*:/mapper/**Mapper.xml
+  type-aliases-package: com/example/ims/entity
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    tags-sorter: alpha
+    operations-sorter: alpha
+
+  api-docs:
+    path: /v3/api-docs
+  group-configs:
+    - group: 'default'
+      paths-to-match: '/**'
+      # Scan your controller package.
+      packages-to-scan: com.foottime.controller
