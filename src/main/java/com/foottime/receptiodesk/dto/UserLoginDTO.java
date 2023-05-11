@@ -7,8 +7,8 @@ import lombok.EqualsAndHashCode;
 
 @Data
 @EqualsAndHashCode(callSuper = false)
-@ApiModel(value="UserLogin", description="用户登录参数")
-public class UserLogin {
+@ApiModel(value="UserLoginDTO", description="用户登录参数")
+public class UserLoginDTO {
 
     @ApiModelProperty(value = "用户名字")
     private String uname;

@@ -32,7 +32,7 @@ public class Goods implements Serializable {
     private String gtitle;
 
     @ApiModelProperty(value = "商品图片")
-    private Blob gicture;
+    private String gicture;
 
     @ApiModelProperty(value = "商品详情")
     private String gdetails;
