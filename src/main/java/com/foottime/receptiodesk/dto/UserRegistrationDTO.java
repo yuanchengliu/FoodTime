@@ -9,8 +9,8 @@ import java.time.LocalDate;
 
 @Data
 @EqualsAndHashCode(callSuper = false)
-@ApiModel(value = "UserRegistration", description = "用户注册信息")
-public class UserRegistration {
+@ApiModel(value = "UserRegistrationDTO", description = "用户注册信息")
+public class UserRegistrationDTO {
     @ApiModelProperty(value = "用户名字")
     private String uname;
 
