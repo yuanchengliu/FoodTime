@@ -39,4 +39,4 @@ springdoc:
     - group: 'default'
       paths-to-match: '/**'
       # Scan your controller package.
-      packages-to-scan: com.foottime.controller
+      packages-to-scan: com.foottime.receptiodesk.controller

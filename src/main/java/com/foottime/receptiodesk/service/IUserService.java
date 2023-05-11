@@ -1,5 +1,7 @@
 package com.foottime.receptiodesk.service;
 
+import com.foottime.common.CommonResult;
+import com.foottime.receptiodesk.dto.UserRegistration;
 import com.foottime.receptiodesk.entity.User;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -13,4 +15,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IUserService extends IService<User> {
 
+    User login(String uname, Integer upwd);
+
+    boolean register(UserRegistration userRegistration);
 }
