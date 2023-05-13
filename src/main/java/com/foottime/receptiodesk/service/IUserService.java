@@ -18,4 +18,3 @@ public interface IUserService extends IService<User> {
 
     boolean register(UserRegistrationDTO userRegistrationDTO);
 }
-

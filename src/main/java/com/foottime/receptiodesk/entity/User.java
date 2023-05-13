@@ -32,7 +32,6 @@ public class User implements Serializable {
     @ApiModelProperty(value = "用户密码")
     private Integer upwd;
 
-
     @ApiModelProperty(value = "用户名称")
     private String unickname;
 

@@ -8,7 +8,7 @@ import lombok.EqualsAndHashCode;
 
 /**
  * <p>
- *
+ * 
  * </p>
  *
  * @author receptiodesk
@@ -18,7 +18,6 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = false)
 @ApiModel(value="Official对象", description="")
 public class Official implements Serializable {
-
 
     private static final long serialVersionUID = 1L;
 

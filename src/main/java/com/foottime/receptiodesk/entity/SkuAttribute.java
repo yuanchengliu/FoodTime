@@ -40,5 +40,4 @@ public class SkuAttribute implements Serializable {
     private String remake1;
 
 
-
 }

@@ -28,7 +28,6 @@ public class Personal_center {
         CommonPage<RecipthInformationDTO> page = iReceiptInformationService.selectLikeAll(val,pageSize,pageNum);
         return CommonResult.success(page);
     }
-
     /**
      * 增加收货地址信息
      * @param informationDTO 收货人信息

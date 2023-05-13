@@ -14,4 +14,3 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IShoucangService extends IService<Shoucang> {
 
 }
-

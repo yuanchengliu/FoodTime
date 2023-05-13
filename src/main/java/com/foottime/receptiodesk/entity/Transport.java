@@ -8,7 +8,7 @@ import lombok.EqualsAndHashCode;
 
 /**
  * <p>
- *
+ * 
  * </p>
  *
  * @author receptiodesk
@@ -29,7 +29,6 @@ public class Transport implements Serializable {
 
     @ApiModelProperty(value = "运输状态")
     private String status;
-
 
     @ApiModelProperty(value = "运输状态详细文字信息")
     private String information;

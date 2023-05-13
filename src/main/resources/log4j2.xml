@@ -34,7 +34,6 @@
             <DefaultRolloverStrategy max="100"/>
         </RollingFile>
 
-
         <!--debug级别日志-->
         <RollingFile name="debugFileAppender"
                      fileName="${LOG_HOME}/debug.log"

@@ -8,7 +8,7 @@ import lombok.EqualsAndHashCode;
 
 /**
  * <p>
- *
+ * 
  * </p>
  *
  * @author receptiodesk
@@ -32,7 +32,6 @@ public class Adverimages implements Serializable {
 
     @ApiModelProperty(value = "待扩充字段")
     private String remake;
-
 
 
 

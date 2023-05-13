@@ -28,7 +28,6 @@ public class Personal {
         return CommonResult.success(login);
     }
 
-
     /**
      * 注册
      * @param userRegistrationDTO
