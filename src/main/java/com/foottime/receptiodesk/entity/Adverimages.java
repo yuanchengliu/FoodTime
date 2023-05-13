@@ -31,13 +31,8 @@ public class Adverimages implements Serializable {
     private Integer catid;
 
     @ApiModelProperty(value = "待扩充字段")
-    private String remake1;
+    private String remake;
 
-    @ApiModelProperty(value = "待扩充字段")
-    private String remake2;
-
-    @ApiModelProperty(value = "待扩充字段")
-    private String remake3;
 
 
 }

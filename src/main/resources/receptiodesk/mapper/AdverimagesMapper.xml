@@ -7,14 +7,13 @@
         <id column="imageid" property="imageid" />
         <result column="imageurl" property="imageurl" />
         <result column="catid" property="catid" />
-        <result column="remake1" property="remake1" />
-        <result column="remake2" property="remake2" />
-        <result column="remake3" property="remake3" />
+        <result column="remake" property="remake" />
+
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        imageid, imageurl, catid, remake1, remake2, remake3
+        imageid, imageurl, catid, remake
     </sql>
 
 </mapper>

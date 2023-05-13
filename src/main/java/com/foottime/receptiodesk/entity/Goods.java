@@ -28,19 +28,19 @@ public class Goods implements Serializable {
     @ApiModelProperty(value = "商品编号")
     private Integer gid;
 
-    @ApiModelProperty(value = "商品标题")
-    private String gtitle;
+    @ApiModelProperty(value = "分类ID(轮)")
+    private String classify;
 
-    @ApiModelProperty(value = "商品图片")
-    private String gicture;
+    @ApiModelProperty(value = "分类ID(轮)")
+    private String id;
+
+    @ApiModelProperty(value = "商品名")
+    private String gtitle;
 
     @ApiModelProperty(value = "商品详情")
     private String gdetails;
 
-    @ApiModelProperty(value = "商品分类")
-    private String gclassify;
-
-    @ApiModelProperty(value = "商品生产商")
+    @ApiModelProperty(value = "商品数量")
     private String gmanufacturer;
 
     @ApiModelProperty(value = "上架日期")
@@ -58,8 +58,6 @@ public class Goods implements Serializable {
     @ApiModelProperty(value = "商品状态 1: 正常 2: 下架 3: 删除")
     private Integer status;
 
-    @ApiModelProperty(value = "待扩充字段")
-    private String remake1;
 
     @ApiModelProperty(value = "待扩充字段")
     private String remake2;

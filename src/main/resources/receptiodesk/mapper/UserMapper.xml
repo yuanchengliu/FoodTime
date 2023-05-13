@@ -11,12 +11,12 @@
         <result column="upicture" property="upicture" />
         <result column="usex" property="usex" />
         <result column="ubirthday" property="ubirthday" />
-        <result column="remake1" property="remake1" />
+
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        uid, uname, upwd, unickname, upicture, usex, ubirthday, remake1
+        uid, uname, unickname,upicture,upwd, usex, ubirthday
     </sql>
 
 </mapper>
