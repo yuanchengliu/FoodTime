@@ -1,11 +1,10 @@
 package com.foottime.receptiodesk.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.foottime.receptiodesk.entity.Adverimages;
 import com.foottime.receptiodesk.mapper.AdverimagesMapper;
 import com.foottime.receptiodesk.service.IAdverimagesService;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -25,7 +24,7 @@ public class AdverimagesService extends ServiceImpl<AdverimagesMapper, Adverimag
     @Override
     public List selectCarouselMap() {
         QueryWrapper<Adverimages> queryWrapper = new QueryWrapper<>();
-        queryWrapper.select("SELECT imageid,imageurl FROM adverimages ORDER BY RAND() LIMIT 0,4;");
+        queryWrapper.select("imageid,imageurl").lambda().last("ORDER BY RAND() LIMIT 0,4");
         List<Adverimages> list = list(queryWrapper);
         return list;
     }

@@ -26,17 +26,17 @@ public class User implements Serializable {
     @ApiModelProperty(value = "用户ID")
     private Integer uid;
 
-    @ApiModelProperty(value = "用户名字")
+    @ApiModelProperty(value = "用户账号")
     private String uname;
 
     @ApiModelProperty(value = "用户密码")
     private Integer upwd;
 
-    @ApiModelProperty(value = "用户昵称")
+    @ApiModelProperty(value = "用户名称")
     private String unickname;
 
     @ApiModelProperty(value = "用户头像")
-    private Blob upicture;
+    private String upicture;
 
     @ApiModelProperty(value = "用户性别(1:男 2：女 3：保密)")
     private Integer usex;
@@ -44,8 +44,7 @@ public class User implements Serializable {
     @ApiModelProperty(value = "用户生日")
     private LocalDate ubirthday;
 
-    @ApiModelProperty(value = "待扩充字段")
-    private String remake1;
+
 
 
 }

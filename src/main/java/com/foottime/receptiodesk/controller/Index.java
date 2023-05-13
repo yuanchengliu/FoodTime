@@ -29,7 +29,7 @@ public class Index {
      * @return
      */
     @GetMapping("/Carousel_map")
-    public CommonResult Carousel_map(){
+    public CommonResult CarouselMap(){
        List list = adverimagesService.selectCarouselMap();
         return CommonResult.success(list);
     }
