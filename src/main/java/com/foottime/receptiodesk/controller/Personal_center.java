@@ -7,6 +7,9 @@ import com.foottime.receptiodesk.service.IReceiptInformationService;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+/**
+ * 收货信息页面
+ */
 
 @RestController
 @RequestMapping("/Personal_center")
