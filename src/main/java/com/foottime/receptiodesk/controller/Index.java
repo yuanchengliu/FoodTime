@@ -3,8 +3,9 @@ package com.foottime.receptiodesk.controller;
 import com.foottime.common.CommonPage;
 import com.foottime.common.CommonResult;
 import com.foottime.receptiodesk.dto.GoodsinfoDTO;
-import com.foottime.receptiodesk.service.impl.AdverimagesService;
-import com.foottime.receptiodesk.service.impl.GoodsService;
+import com.foottime.receptiodesk.service.IAdverimagesService;
+import com.foottime.receptiodesk.service.IGoodsService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,10 +21,9 @@ import static com.foottime.common.StaticConstants.MAGIC_POINT;
 @RequestMapping("/Index")
 public class Index {
     @Autowired
-    GoodsService goodsService;
+    IGoodsService goodsService;
     @Autowired
-    AdverimagesService adverimagesService;
-
+    IAdverimagesService adverimagesService;
 
     /**
      * 轮播图

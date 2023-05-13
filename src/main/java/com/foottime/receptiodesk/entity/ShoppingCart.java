@@ -8,7 +8,7 @@ import lombok.EqualsAndHashCode;
 
 /**
  * <p>
- *
+ * 
  * </p>
  *
  * @author receptiodesk
@@ -44,7 +44,6 @@ public class ShoppingCart implements Serializable {
 
     @ApiModelProperty(value = "总金额")
     private Integer amount;
-
 
 
 }

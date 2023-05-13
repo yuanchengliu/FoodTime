@@ -35,7 +35,6 @@ public class Address implements Serializable {
     @ApiModelProperty(value = "订单状态")
     private String ostatus;
 
-
     @ApiModelProperty(value = "支付状态")
     private String pstatus;
 

@@ -8,7 +8,7 @@ import lombok.EqualsAndHashCode;
 
 /**
  * <p>
- *
+ * 
  * </p>
  *
  * @author receptiodesk
@@ -32,7 +32,6 @@ public class Shop implements Serializable {
 
     @ApiModelProperty(value = "单价")
     private Integer unit;
-
 
 
 }

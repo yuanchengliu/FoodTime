@@ -43,7 +43,6 @@ public class Sku implements Serializable {
     @ApiModelProperty(value = "SPUID")
     private String spuId;
 
-
     @ApiModelProperty(value = "类目ID")
     private Integer categoryId;
 
