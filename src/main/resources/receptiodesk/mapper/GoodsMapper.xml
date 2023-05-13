@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.foottime.receptiodesk.mapper.GoodsMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.foottime.receptiodesk.entity.Goods">
+        <id column="gid" property="gid" />
+        <result column="classify" property="classify" />
+        <result column="id" property="id" />
+        <result column="gtitle" property="gtitle" />
+        <result column="gdetails" property="gdetails" />
+        <result column="gmanufacturer" property="gmanufacturer" />
+        <result column="gtime" property="gtime" />
+        <result column="grice" property="grice" />
+        <result column="create_time" property="createTime" />
+        <result column="update_time" property="updateTime" />
+        <result column="status" property="status" />
+        <result column="remake2" property="remake2" />
+        <result column="remake3" property="remake3" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        gid,classify,id,gtitle,gdetails,gmanufacturer,gtime,grice,create_time,update_time,status,remake2,remake3
+    </sql>
+
+</mapper>
+

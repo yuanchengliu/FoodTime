@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.foottime.receptiodesk.mapper.ReceiptInformationMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.foottime.receptiodesk.entity.ReceiptInformation">
+        <id column="rid" property="rid" />
+        <result column="rname" property="rname" />
+        <result column="rphone" property="rphone" />
+        <result column="raddress" property="raddress" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        rid, rname, rphone, raddress
+    </sql>
+
+</mapper>
+
