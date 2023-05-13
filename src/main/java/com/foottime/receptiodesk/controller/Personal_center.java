@@ -9,6 +9,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+/**
+ * 收货信息页面
+ */
 
 @RestController
 @RequestMapping("/Personal_center")

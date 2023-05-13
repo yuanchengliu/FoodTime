@@ -4,7 +4,9 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-
+/**
+ * 分页查询收货信息和修改信息
+ */
 @Data
 @EqualsAndHashCode(callSuper = false)
 @ApiModel(value="RecipthInformationDto", description="收货人信息查询添加")
