@@ -58,7 +58,6 @@ public class Goods implements Serializable {
     @ApiModelProperty(value = "商品状态 1: 正常 2: 下架 3: 删除")
     private Integer status;
 
-
     @ApiModelProperty(value = "待扩充字段")
     private String remake2;
 
