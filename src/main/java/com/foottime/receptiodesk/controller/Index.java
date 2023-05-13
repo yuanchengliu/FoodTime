@@ -24,6 +24,7 @@ public class Index {
     @Autowired
     AdverimagesService adverimagesService;
 
+
     /**
      * 轮播图
      * @return

@@ -8,7 +8,7 @@ import lombok.EqualsAndHashCode;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author receptiodesk
@@ -35,6 +35,7 @@ public class Shoucang implements Serializable {
 
     @ApiModelProperty(value = "价格")
     private Integer price;
+
 
 
 }

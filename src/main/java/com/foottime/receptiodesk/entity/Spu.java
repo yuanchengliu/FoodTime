@@ -46,6 +46,7 @@ public class Spu implements Serializable {
     @ApiModelProperty(value = "售后服务")
     private String afterSalesService;
 
+
     @ApiModelProperty(value = "是否上架,0已下架，1已上架")
     private Integer isMarketable;
 

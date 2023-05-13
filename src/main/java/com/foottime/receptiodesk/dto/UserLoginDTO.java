@@ -16,3 +16,4 @@ public class UserLoginDTO {
     @ApiModelProperty(value = "用户密码")
     private Integer upwd;
 }
+

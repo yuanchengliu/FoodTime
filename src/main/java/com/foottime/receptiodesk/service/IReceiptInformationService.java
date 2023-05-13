@@ -28,4 +28,5 @@ public interface IReceiptInformationService extends IService<ReceiptInformation>
      * @return 添加信息
      */
     RecipthInformationDTO addrecipth(RecipthInformationDTO informationDTO);
+
 }

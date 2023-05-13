@@ -23,6 +23,7 @@ import lombok.EqualsAndHashCode;
 @ApiModel(value="Goods对象", description="商品信息")
 public class Goods implements Serializable {
 
+
     private static final long serialVersionUID = 1L;
 
     @ApiModelProperty(value = "商品编号")

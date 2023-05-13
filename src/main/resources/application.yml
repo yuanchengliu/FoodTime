@@ -56,3 +56,4 @@ springdoc:
       paths-to-match: '/**'
       # Scan your controller package.
       packages-to-scan: com.foottime.receptiodesk.controller
+

@@ -8,7 +8,7 @@ import lombok.EqualsAndHashCode;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author receptiodesk
@@ -18,6 +18,7 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = false)
 @ApiModel(value="Logistics对象", description="")
 public class Logistics implements Serializable {
+
 
     private static final long serialVersionUID = 1L;
 

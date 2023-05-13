@@ -21,3 +21,4 @@ public class GoodsinfoDTO {
     @ApiModelProperty(value = "商品价格")
     private BigDecimal grice;
 }
+

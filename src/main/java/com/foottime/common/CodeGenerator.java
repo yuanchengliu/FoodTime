@@ -17,8 +17,6 @@ import java.util.List;
 import java.util.Scanner;
 
 public class CodeGenerator {
-
-
     /**
      * <p>
      * 读取控制台内容

@@ -8,7 +8,7 @@ import lombok.EqualsAndHashCode;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author receptiodesk
@@ -29,6 +29,7 @@ public class Fenleione implements Serializable {
 
     @ApiModelProperty(value = "价格")
     private Integer price;
+
 
     @ApiModelProperty(value = "一级分类")
     private String one;

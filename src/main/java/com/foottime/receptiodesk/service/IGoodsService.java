@@ -15,6 +15,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IGoodsService extends IService<Goods> {
 
+
     CommonPage<GoodsinfoDTO> selectpage(String searchResults, Integer pageNum, Integer pageSize);
 
 }

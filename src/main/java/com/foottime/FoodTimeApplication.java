@@ -20,3 +20,4 @@ public class FoodTimeApplication extends WebMvcConfigurationSupport {
 	}
 
 }
+

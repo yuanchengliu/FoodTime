@@ -10,7 +10,7 @@ import lombok.EqualsAndHashCode;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author receptiodesk
@@ -20,6 +20,7 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = false)
 @ApiModel(value="ReceiptInformation对象", description="收货人信息")
 public class ReceiptInformation implements Serializable {
+
 
     private static final long serialVersionUID = 1L;
 

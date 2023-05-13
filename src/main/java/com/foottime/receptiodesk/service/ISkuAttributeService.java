@@ -14,3 +14,4 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface ISkuAttributeService extends IService<SkuAttribute> {
 
 }
+

@@ -15,5 +15,6 @@ import java.util.List;
  */
 public interface IAdverimagesService extends IService<Adverimages> {
 
+
     List selectCarouselMap();
 }

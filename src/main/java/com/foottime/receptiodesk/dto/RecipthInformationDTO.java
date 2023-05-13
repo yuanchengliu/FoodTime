@@ -18,3 +18,4 @@ public class RecipthInformationDTO {
     @ApiModelProperty(value = "收获人地址")
     private String raddress;
 }
+

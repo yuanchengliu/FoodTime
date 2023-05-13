@@ -18,6 +18,7 @@ import java.util.concurrent.TimeUnit;
  * @date 2022-06-09 22:15
  */
 @Component
+
 public class RedisUtil {
     @Resource
     private RedisTemplate<String, Object> redisTemplate;

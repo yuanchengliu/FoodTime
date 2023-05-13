@@ -26,3 +26,4 @@ public class UserRegistrationDTO {
     @ApiModelProperty(value = "用户生日")
     private LocalDate ubirthday;
 }
+
