@@ -4,8 +4,6 @@ import com.foottime.common.CommonPage;
 import com.foottime.common.CommonResult;
 import com.foottime.receptiodesk.dto.RecipthInformationDTO;
 import com.foottime.receptiodesk.service.IReceiptInformationService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;

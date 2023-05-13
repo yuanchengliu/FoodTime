@@ -2,6 +2,7 @@ package com.foottime.receptiodesk.mapper;
 
 import com.foottime.receptiodesk.entity.ShoppingCart;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Mapper;
 
 /**
  * <p>
@@ -11,6 +12,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author receptiodesk
  * @since 2023-05-13
  */
+@Mapper
 public interface ShoppingCartMapper extends BaseMapper<ShoppingCart> {
 
 }
