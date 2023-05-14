@@ -1,5 +1,6 @@
 package com.foottime.receptiodesk.service;
 
+import com.foottime.receptiodesk.dto.AddressDTO;
 import com.foottime.receptiodesk.entity.Address;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -12,5 +13,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @since 2023-05-13
  */
 public interface IAddressService extends IService<Address> {
+    AddressDTO updateOstatus(Integer orderid, String ostatus);
+    void deleOrder(Integer orderid);
 
 }
