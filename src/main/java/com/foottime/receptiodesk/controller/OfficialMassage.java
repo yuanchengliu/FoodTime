@@ -50,6 +50,8 @@ public class OfficialMassage {
         return CommonResult.success(page);
     }
 
+
+    //确认收货
     @PostMapping("/updateostatus")
     public CommonResult<AddressDTO> updateOstatus(@RequestParam Integer orderid,@RequestParam String ostatus){
         AddressDTO addressDTO = iAddressService.updateOstatus(orderid,ostatus);
@@ -60,6 +62,8 @@ public class OfficialMassage {
 
     }
 
+
+    //删除订单
     @PostMapping("/deleorder")
     public CommonResult deleorder(@RequestParam Integer orderid){
         iAddressService.deleOrder(orderid);
