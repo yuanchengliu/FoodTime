@@ -1,8 +1,11 @@
 package com.foottime.receptiodesk.mapper;
 
+import com.foottime.receptiodesk.dto.ShowproductlistDTO;
 import com.foottime.receptiodesk.entity.Goods;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
+
+import java.util.List;
 
 /**
  * <p>
@@ -15,4 +18,7 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface GoodsMapper extends BaseMapper<Goods> {
 
+    List<ShowproductlistDTO> selectrecommend();
+
+    List<ShowproductlistDTO> categoryQueries(String category);
 }

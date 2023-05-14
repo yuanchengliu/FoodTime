@@ -7,12 +7,13 @@
         <id column="storeid" property="storeid" />
         <result column="stext" property="stext" />
         <result column="picture" property="picture" />
+        <result column="stname" property="stname" />
         <result column="unit" property="unit" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        storeid, stext, picture, unit
+        storeid, stext, picture, unit,stname
     </sql>
 
 </mapper>
