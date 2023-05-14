@@ -1,5 +1,6 @@
 package com.foottime.receptiodesk.dto;
 
+
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -9,8 +10,8 @@ import java.math.BigDecimal;
 
 @Data
 @EqualsAndHashCode(callSuper = false)
-@ApiModel(value="GoodsDTO", description="商品搜索信息")
-public class GoodsinfoDTO {
+@ApiModel(value="ShowproductlistDTO", description="首页推荐信息")
+public class ShowproductlistDTO {
 
     @ApiModelProperty(value = "商品编号")
     private Integer gid;
@@ -26,4 +27,8 @@ public class GoodsinfoDTO {
 
     @ApiModelProperty(value = "商品销量")
     private int Sales;
+
+    @ApiModelProperty(value = "店铺名称")
+    private String stname;
 }
+
