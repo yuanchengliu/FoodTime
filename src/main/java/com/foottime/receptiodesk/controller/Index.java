@@ -3,6 +3,7 @@ package com.foottime.receptiodesk.controller;
 import com.foottime.common.CommonPage;
 import com.foottime.common.CommonResult;
 import com.foottime.receptiodesk.dto.GoodsinfoDTO;
+import com.foottime.receptiodesk.dto.ProductDetailsDTO;
 import com.foottime.receptiodesk.dto.ShowproductlistDTO;
 import com.foottime.receptiodesk.service.IAdverimagesService;
 import com.foottime.receptiodesk.service.ICategoryService;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Map;
 
 import static com.foottime.common.StaticConstants.How_many_pieces_of_data;
 import static com.foottime.common.StaticConstants.MAGIC_POINT;
@@ -63,6 +65,7 @@ public class Index {
 
     /**
      * 每日推荐
+     *
      * @return
      */
     @GetMapping("/Recommend")
@@ -73,13 +76,26 @@ public class Index {
 
     /**
      * 根据分类查询商品
+     *
      * @param category
      * @return
      */
     @GetMapping("/Category_queries")
-    public CommonResult CategoryQueries(@RequestParam String category){
+    public CommonResult CategoryQueries(@RequestParam String category) {
         List<ShowproductlistDTO> list = goodsService.categoryQueries(category);
         return CommonResult.success(list);
+    }
+
+
+    /**
+     * 商品详情
+     * @param id
+     * @return
+     */
+    @GetMapping("/Product_details")
+    public CommonResult ProductDetails(@RequestParam Integer id) {
+        List<ProductDetailsDTO> dtoList = goodsService.productDetails(id);
+        return CommonResult.success(dtoList);
     }
 
 
