@@ -6,10 +6,10 @@
     <resultMap id="BaseResultMap" type="com.foottime.receptiodesk.entity.Sku">
         <id column="id" property="id" />
         <result column="name" property="name" />
-        <result column="price" property="price" />
-        <result column="num" property="num" />
+<!--        <result column="price" property="price" />-->
+<!--        <result column="num" property="num" />-->
         <result column="image" property="image" />
-        <result column="images" property="images" />
+<!--        <result column="images" property="images" />-->
         <result column="spu_id" property="spuId" />
         <result column="category_id" property="categoryId" />
         <result column="category_name" property="categoryName" />
@@ -23,7 +23,7 @@
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, name, price, num, image, images, spu_id, category_id, category_name, brand_id, sku_attribute, status, create_time, update_time, remake1
+        id, name, image, spu_id, category_id, category_name, brand_id, sku_attribute, status, create_time, update_time, remake1
     </sql>
 
 </mapper>
