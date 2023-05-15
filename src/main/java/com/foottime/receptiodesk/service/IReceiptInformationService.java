@@ -1,7 +1,7 @@
 package com.foottime.receptiodesk.service;
 
 import com.foottime.common.CommonPage;
-import com.foottime.receptiodesk.dto.RecipthInformationDTO;
+import com.foottime.receptiodesk.dto.Recipth_InformationDTO;
 import com.foottime.receptiodesk.entity.ReceiptInformation;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -21,11 +21,11 @@ public interface IReceiptInformationService extends IService<ReceiptInformation>
      * @param pageNum 当前多少页
      * @return 分页
      */
-    CommonPage<RecipthInformationDTO> selectLikeAll(String val, Integer pageSize, Integer pageNum);
+    CommonPage<Recipth_InformationDTO> selectLikeAll(String val, Integer pageSize, Integer pageNum);
     /**
      * 增加收货地址信息
      * @param informationDTO 收货人信息
      * @return 添加信息
      */
-    RecipthInformationDTO addrecipth(RecipthInformationDTO informationDTO);
+    Recipth_InformationDTO addrecipth(Recipth_InformationDTO informationDTO);
 }

@@ -5,11 +5,13 @@ import com.foottime.receptiodesk.dto.UserLoginDTO;
 import com.foottime.receptiodesk.dto.UserRegistrationDTO;
 import com.foottime.receptiodesk.entity.User;
 import com.foottime.receptiodesk.service.IUserService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/Personal")
+@Tag(name="登录和注册")
 public class Personal {
     @Autowired
     IUserService userService;
