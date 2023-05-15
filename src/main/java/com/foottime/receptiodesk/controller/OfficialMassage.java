@@ -3,15 +3,19 @@ package com.foottime.receptiodesk.controller;
 import com.foottime.common.CommonPage;
 import com.foottime.common.CommonResult;
 import com.foottime.receptiodesk.dto.AddressDTO;
+import com.foottime.receptiodesk.dto.LogisticsDTO;
 import com.foottime.receptiodesk.dto.NoticeDTO;
 import com.foottime.receptiodesk.entity.Official;
 import com.foottime.receptiodesk.service.IAddressService;
+import com.foottime.receptiodesk.service.ILogisticsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 import com.foottime.receptiodesk.service.IOfficialService;
 import com.foottime.receptiodesk.dto.OfficialDTO;
 import com.foottime.receptiodesk.service.INoticeService;
+
+import java.time.LocalDateTime;
 
 @RestController
 @RequestMapping("/OfficialMassage")
@@ -22,6 +26,8 @@ public class OfficialMassage {
     INoticeService iNoticeService;
     @Autowired(required = false)
     IAddressService iAddressService;
+    @Autowired
+    ILogisticsService iLogisticsService;
 
     //官方消息
     @GetMapping("/getOfficialMssage")
@@ -68,5 +74,12 @@ public class OfficialMassage {
     public CommonResult deleorder(@RequestParam Integer orderid){
         iAddressService.deleOrder(orderid);
         return CommonResult.success("删除成功");
+    }
+
+    //延长收货
+    @PostMapping("/updatelogistics")
+    public CommonResult<CommonPage<LogisticsDTO>> updateTime(@RequestParam Integer orderid, @RequestParam LocalDateTime Time){
+        iLogisticsService.updateTime(orderid,Time);
+        return CommonResult.success("修改成功");
     }
 }
