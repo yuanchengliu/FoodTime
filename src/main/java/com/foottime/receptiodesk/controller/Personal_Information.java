@@ -4,6 +4,7 @@ import com.foottime.common.CommonPage;
 import com.foottime.common.CommonResult;
 import com.foottime.receptiodesk.dto.Address_InformationDTO;
 import com.foottime.receptiodesk.dto.Forum_InformationDTO;
+import com.foottime.receptiodesk.dto.ProductDetailsDTO;
 import com.foottime.receptiodesk.dto.ShouchangDTO;
 import com.foottime.receptiodesk.service.IAddressService;
 import com.foottime.receptiodesk.service.IForumService;
@@ -44,51 +45,82 @@ public class Personal_Information {
         List list = userService.selectuser1();
         return CommonResult.success(list);
     }
+//    /**
+//     * 模糊查询分页---查询我的发表
+//     * @param val 查询参数
+//     * @param pageSize 每页条数
+//     * @param pageNum 当前多少页
+//     * @return 分页
+//     */
+//    @GetMapping("/basic_forum")
+//    public CommonResult<CommonPage<Forum_InformationDTO>> fuzzyqueries(@RequestParam(required = false) String val,
+//                                                                       @RequestParam(value = "pageSize", defaultValue = "3") Integer pageSize,
+//                                                                       @RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum) {
+//
+//        CommonPage<Forum_InformationDTO> page = forumService.selectforum(val,pageSize,pageNum);
+//        return CommonResult.success(page);
+//    }
+
+//    /**
+//     * 模糊查询分页---查询我的订单
+//     * @param val 查询参数
+//     * @param pageSize 每页条数
+//     * @param pageNum 当前多少页
+//     * @return 分页
+//     */
+//    @GetMapping("/basic_address")
+//    public CommonResult<CommonPage<Address_InformationDTO>> address(@RequestParam(required = false) String val,
+//                                                                         @RequestParam(value = "pageSize", defaultValue = "3") Integer pageSize,
+//                                                                         @RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum) {
+//
+//        CommonPage<Address_InformationDTO> page = addressService.selectaddress(val,pageSize,pageNum);
+//        return CommonResult.success(page);
+//    }
     /**
-     * 模糊查询分页---查询我的发表
-     * @param val 查询参数
-     * @param pageSize 每页条数
-     * @param pageNum 当前多少页
-     * @return 分页
+     * 根据ID查询发表
+     * @param id
+     * @return
      */
     @GetMapping("/basic_forum")
-    public CommonResult<CommonPage<Forum_InformationDTO>> fuzzyqueries(@RequestParam(required = false) String val,
-                                                                       @RequestParam(value = "pageSize", defaultValue = "3") Integer pageSize,
-                                                                       @RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum) {
-
-        CommonPage<Forum_InformationDTO> page = forumService.selectforum(val,pageSize,pageNum);
-        return CommonResult.success(page);
+    public CommonResult forumselect(@RequestParam Integer id) {
+        List<Forum_InformationDTO> dtoList = forumService.forumselect(id);
+        return CommonResult.success(dtoList);
     }
 
     /**
-     * 模糊查询分页---查询我的订单
-     * @param val 查询参数
-     * @param pageSize 每页条数
-     * @param pageNum 当前多少页
-     * @return 分页
+     * 根据ID查询订单
+     * @param id
+     * @return
      */
     @GetMapping("/basic_address")
-    public CommonResult<CommonPage<Address_InformationDTO>> address(@RequestParam(required = false) String val,
-                                                                         @RequestParam(value = "pageSize", defaultValue = "3") Integer pageSize,
-                                                                         @RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum) {
-
-        CommonPage<Address_InformationDTO> page = addressService.selectaddress(val,pageSize,pageNum);
-        return CommonResult.success(page);
+    public CommonResult address(@RequestParam Integer id) {
+        List<Address_InformationDTO> dtoList = addressService.productDetails(id);
+        return CommonResult.success(dtoList);
     }
 
     /**
-     * 模糊查询分页---查询我的订单
-     * @param val 查询参数
-     * @param pageSize 每页条数
-     * @param pageNum 当前多少页
-     * @return 分页
+     * 根据ID查询收藏
+     * @param id
+     * @return
      */
     @GetMapping("/basic_shouchang")
-    public CommonResult<CommonPage<ShouchangDTO>> shouchang(@RequestParam(required = false) String val,
-                                                            @RequestParam(value = "pageSize", defaultValue = "3") Integer pageSize,
-                                                            @RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum) {
-
-        CommonPage<ShouchangDTO> page = shoucangService.selectshoucang(val,pageSize,pageNum);
-        return CommonResult.success(page);
+    public CommonResult shoucangselect(@RequestParam Integer id) {
+        List<ShouchangDTO> dtoList = shoucangService.shoucangselect(id);
+        return CommonResult.success(dtoList);
     }
+//    /**
+//     * 模糊查询分页---查询我的订单
+//     * @param val 查询参数
+//     * @param pageSize 每页条数
+//     * @param pageNum 当前多少页
+//     * @return 分页
+//     */
+//    @GetMapping("/basic_shouchang")
+//    public CommonResult<CommonPage<ShouchangDTO>> shouchang(@RequestParam(required = false) String val,
+//                                                            @RequestParam(value = "pageSize", defaultValue = "3") Integer pageSize,
+//                                                            @RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum) {
+//
+//        CommonPage<ShouchangDTO> page = shoucangService.selectshoucang(val,pageSize,pageNum);
+//        return CommonResult.success(page);
+//    }
 }

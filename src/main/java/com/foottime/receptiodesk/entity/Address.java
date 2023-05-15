@@ -33,7 +33,7 @@ public class Address implements Serializable {
     private Integer shppingnumber;
 
     @ApiModelProperty(value = "用户ID")
-    private Integer aid;
+    private Integer uid;
 
     @ApiModelProperty(value = "商品图片")
     private String shopPicture;

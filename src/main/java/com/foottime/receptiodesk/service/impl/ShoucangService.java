@@ -31,37 +31,42 @@ public class ShoucangService extends ServiceImpl<ShoucangMapper, Shoucang> imple
     ShoucangMapper mapper;
 
     @Override
-    public CommonPage<ShouchangDTO> selectshoucang(String val, Integer pageSize, Integer pageNum) {
-        Page<Shoucang> page = new Page<>(pageNum, pageSize);
-        //         val传入有值 QueryWrapper模糊查询并 如果val没有传入值则就只执行分页查询
-        QueryWrapper<Shoucang> wrapper = new QueryWrapper<>();
-        if (val!=null){
-            wrapper.lambda().like(Shoucang::getPicture, val)
-                    .or().like(Shoucang::getText, val)
-                    .or().like(Shoucang::getTime, val)
-                    .or().like(Shoucang::getPrice, val)
-                    .or().like(Shoucang::getName, val);
-        }
-        else {
-            wrapper.select("picture,text,name,time,price");
-        }
-        //        将查询出来的数据与传入的分页的条件page 进行分页
-        mapper.selectPage(page, wrapper);
-        //        将分页出来的数据封装进list
-        List<Shoucang> list = page.getRecords();
-        //        通过String流的方式将查询出来的数据封装进DTO
-        List<ShouchangDTO> collect = list.stream().map((itme) -> {
-            ShouchangDTO informationDTO = new ShouchangDTO();
-            BeanUtils.copyProperties(itme, informationDTO);
-            return informationDTO;
-        }).collect(Collectors.toList());
-        //        将page数据和DOT数据返回给封装的分页方法
-        CommonPage<ShouchangDTO> commonPage = new CommonPage<>();
-        commonPage.setPageNum(pageNum);
-        commonPage.setPageSize(pageSize);
-        commonPage.setTotalPage((int) page.getPages());
-        commonPage.setTotal(page.getTotal());
-        commonPage.setList(collect);
-        return commonPage;
+    public List<ShouchangDTO> shoucangselect(Integer id) {
+        return mapper.shoucangselect(id);
     }
+
+//    @Override
+//    public CommonPage<ShouchangDTO> selectshoucang(String val, Integer pageSize, Integer pageNum) {
+//        Page<Shoucang> page = new Page<>(pageNum, pageSize);
+//        //         val传入有值 QueryWrapper模糊查询并 如果val没有传入值则就只执行分页查询
+//        QueryWrapper<Shoucang> wrapper = new QueryWrapper<>();
+//        if (val!=null){
+//            wrapper.lambda().like(Shoucang::getPicture, val)
+//                    .or().like(Shoucang::getText, val)
+//                    .or().like(Shoucang::getTime, val)
+//                    .or().like(Shoucang::getPrice, val)
+//                    .or().like(Shoucang::getName, val);
+//        }
+//        else {
+//            wrapper.select("picture,text,name,time,price");
+//        }
+//        //        将查询出来的数据与传入的分页的条件page 进行分页
+//        mapper.selectPage(page, wrapper);
+//        //        将分页出来的数据封装进list
+//        List<Shoucang> list = page.getRecords();
+//        //        通过String流的方式将查询出来的数据封装进DTO
+//        List<ShouchangDTO> collect = list.stream().map((itme) -> {
+//            ShouchangDTO informationDTO = new ShouchangDTO();
+//            BeanUtils.copyProperties(itme, informationDTO);
+//            return informationDTO;
+//        }).collect(Collectors.toList());
+//        //        将page数据和DOT数据返回给封装的分页方法
+//        CommonPage<ShouchangDTO> commonPage = new CommonPage<>();
+//        commonPage.setPageNum(pageNum);
+//        commonPage.setPageSize(pageSize);
+//        commonPage.setTotalPage((int) page.getPages());
+//        commonPage.setTotal(page.getTotal());
+//        commonPage.setList(collect);
+//        return commonPage;
+//    }
 }

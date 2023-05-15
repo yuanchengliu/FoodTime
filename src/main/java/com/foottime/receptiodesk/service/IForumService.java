@@ -2,6 +2,7 @@ package com.foottime.receptiodesk.service;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.foottime.common.CommonPage;
+import com.foottime.receptiodesk.dto.Address_InformationDTO;
 import com.foottime.receptiodesk.dto.Forum_InformationDTO;
 import com.foottime.receptiodesk.dto.Forum_publishedDTO;
 import com.foottime.receptiodesk.entity.Forum;
@@ -18,15 +19,19 @@ import java.util.List;
  * @since 2023-05-13
  */
 public interface IForumService extends IService<Forum> {
-/**
- * 模糊查询分页
- * @param val 查询参数
- * @param pageSize 每页条数
- * @param pageNum 当前多少页
- * @return 分页
- * */
-  CommonPage<Forum_InformationDTO> selectforum(String val, Integer pageSize, Integer pageNum);
+///**
+// * 模糊查询分页
+// * @param val 查询参数
+// * @param pageSize 每页条数
+// * @param pageNum 当前多少页
+// * @return 分页
+// * */
+//  CommonPage<Forum_InformationDTO> selectforum(String val, Integer pageSize, Integer pageNum);
+  /**
+   * 个人信息查询发表
+   */
 
+  List<Forum_InformationDTO> forumselect(Integer id);
   /**
    * 论坛详情页
    */

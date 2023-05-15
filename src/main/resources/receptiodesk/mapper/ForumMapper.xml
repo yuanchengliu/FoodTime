@@ -22,8 +22,22 @@
     <sql id="Base_Column_List">
         fid, fname, heandpicture, text, message, picture, publication, collections, likes, shares, remake1, remake2
     </sql>
-<!--    <select id="queryById" resultMap="BaseResultMap">-->
-<!--        SELECT text, publication FROM forum WHERE fid = #{fid}-->
-<!--    </select>-->
+
+    <!-- 多表联查 -->
+
+    <resultMap id="forum" type="com.foottime.receptiodesk.dto.Forum_InformationDTO">
+        <result property="text" column="uid"/>
+        <result property="publication" column="favorite"/>
+    </resultMap>
+
+    <select id="forumselect" resultMap="forum">
+        SELECT
+            a.`text` ,a.`publication`
+        FROM
+            forum a,user c
+        WHERE
+            a.`uid`=c.`uid`
+          AND c.`uid`=${id}
+    </select>
 
 </mapper>

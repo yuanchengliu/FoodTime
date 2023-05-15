@@ -1,8 +1,12 @@
 package com.foottime.receptiodesk.mapper;
 
+import com.foottime.receptiodesk.dto.Address_InformationDTO;
+import com.foottime.receptiodesk.dto.ShouchangDTO;
 import com.foottime.receptiodesk.entity.Shoucang;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
+
+import java.util.List;
 
 /**
  * <p>
@@ -14,5 +18,5 @@ import org.apache.ibatis.annotations.Mapper;
  */
 @Mapper
 public interface ShoucangMapper extends BaseMapper<Shoucang> {
-
+    List<ShouchangDTO> shoucangselect(Integer id);
 }

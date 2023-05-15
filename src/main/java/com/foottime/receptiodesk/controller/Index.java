@@ -10,6 +10,7 @@ import com.foottime.receptiodesk.service.ICategoryService;
 import com.foottime.receptiodesk.service.IFenleioneService;
 import com.foottime.receptiodesk.service.IGoodsService;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,6 +24,7 @@ import static com.foottime.common.StaticConstants.How_many_pieces_of_data;
 import static com.foottime.common.StaticConstants.MAGIC_POINT;
 
 @RestController
+@Tag(name="首页")
 @RequestMapping("/Index")
 public class Index {
     @Autowired

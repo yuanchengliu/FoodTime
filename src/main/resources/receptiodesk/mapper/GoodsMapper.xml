@@ -76,14 +76,11 @@
 
     <select id="productDetails" resultMap="goodsDetailsMap">
         SELECT
-            a.`gid` ,a.`gtitle` ,a.`gdetails`,c.`stname` ,c.`scture` ,d.`id` ,d.`image` ,d.`name` ,d.`num` ,d.`price`
+            a.`orderid` ,a.`shop_picture` ,a.`name`,a.`ostatus` ,a.`number` ,a.`amount`,c.`uid`
         FROM
-            goods a,shop c,sku_attribute d
-        WHERE
-            a.`storeid`=c.`storeid`
-          AND d.`gid`=a.`gid`
-          AND a.`gid`=${id}
-
+            address a,USER c
+        WHERE c.`uid`=a.`orderid`
+          AND c.`uid`=${id}
     </select>
 
 </mapper>

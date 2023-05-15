@@ -6,7 +6,7 @@
     <resultMap id="BaseResultMap" type="com.foottime.receptiodesk.entity.Address">
         <id column="orderid" property="orderid" />
         <result column="shppingnumber" property="shppingnumber" />
-        <result column="aid" property="aid" />
+        <result column="uid" property="uid" />
         <result column="shop_picture" property="shopPicture" />
         <result column="name" property="name" />
         <result column="details" property="details" />
@@ -23,7 +23,31 @@
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        orderid, shppingnumber, aid, shop_picture, name, details, ostatus, pstatus, createTime, method, givetime, address, items, number, amount
+        orderid, shppingnumber, uid, shop_picture, name, details, ostatus, pstatus, createTime, method, givetime, address, items, number, amount
     </sql>
+
+
+
+    <!-- 多表联查 -->
+
+    <resultMap id="AddressRes" type="com.foottime.receptiodesk.dto.Address_InformationDTO">
+        <result property="orderid" column="orderid"/>
+        <result property="shopPicture" column="shopPicture"/>
+        <result property="name" column="name"/>
+        <result property="ostatus" column="ostatus"/>
+        <result property="number" column="number"/>
+        <result property="amount" column="amount"/>
+        <result property="uid" column="uid"/>
+    </resultMap>
+
+    <select id="address" resultMap="AddressRes">
+        SELECT
+            a.`shop_picture` ,a.`name`,a.`ostatus` ,a.`number` ,a.`amount`
+        FROM
+            address a,USER c
+        WHERE
+            a.`uid`=c.`uid`
+          AND c.`uid`=${id}
+    </select>
 
 </mapper>
