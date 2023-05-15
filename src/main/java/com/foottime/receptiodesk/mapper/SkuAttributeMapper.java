@@ -2,6 +2,7 @@ package com.foottime.receptiodesk.mapper;
 
 import com.foottime.receptiodesk.entity.SkuAttribute;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Mapper;
 
 /**
  * <p>
@@ -11,6 +12,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author receptiodesk
  * @since 2023-05-15
  */
+@Mapper
 public interface SkuAttributeMapper extends BaseMapper<SkuAttribute> {
 
 }
