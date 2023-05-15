@@ -1,5 +1,6 @@
 package com.foottime.receptiodesk.service.impl;
 
+import cn.hutool.json.JSONUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.foottime.receptiodesk.dto.UserDTO;
 import com.foottime.receptiodesk.dto.UserRegistrationDTO;
@@ -30,7 +31,8 @@ public class UserService extends ServiceImpl<UserMapper, User> implements IUserS
     @Autowired
     UserMapper userMapper;
 
-
+    @Resource
+    StringRedisTemplate stringRedisTemplate;
 
     @Override
     public User login(String uname, Integer upwd) {
@@ -39,6 +41,9 @@ public class UserService extends ServiceImpl<UserMapper, User> implements IUserS
                 .eq(User::getUname,uname)
                 .eq(User::getUpwd,upwd);
         User one = getOne(queryWrapper);
+        User user = userMapper.selectOne(queryWrapper);
+        String key = "User"+user.getUid();
+        stringRedisTemplate.opsForValue().set(key, JSONUtil.toJsonStr(user));
         return one;
     }
 

@@ -1,5 +1,6 @@
 package com.foottime.receptiodesk.controller;
 
+import cn.hutool.json.JSONUtil;
 import com.foottime.common.CommonResult;
 import com.foottime.receptiodesk.dto.UserLoginDTO;
 import com.foottime.receptiodesk.dto.UserRegistrationDTO;
@@ -16,8 +17,7 @@ import javax.annotation.Resource;
 public class Personal {
     @Autowired
     IUserService userService;
-    @Resource
-    StringRedisTemplate stringRedisTemplate;
+
     /**
      * 登录
      * @param userLoginDTO
@@ -29,6 +29,7 @@ public class Personal {
         if (login == null) {
             return CommonResult.validateFailed("用户名或密码错误");
         }
+
         return CommonResult.success(login);
     }
 
