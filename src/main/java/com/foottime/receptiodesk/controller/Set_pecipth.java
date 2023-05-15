@@ -6,6 +6,7 @@ import com.foottime.receptiodesk.dto.Recipth_InformationDTO;
 import com.foottime.receptiodesk.dto.UserDTO;
 import com.foottime.receptiodesk.service.IReceiptInformationService;
 import com.foottime.receptiodesk.service.IUserService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -14,6 +15,7 @@ import javax.annotation.Resource;
  */
 
 @RestController
+@Tag(name="设置页面--收货信息")
 @RequestMapping("/Personal_center")
 public class Set_pecipth {
     @Resource

@@ -1,5 +1,7 @@
 package com.foottime.receptiodesk.dto;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -11,6 +13,13 @@ import java.time.LocalDateTime;
 @EqualsAndHashCode(callSuper = false)
 @ApiModel(value="ShoucangDTO", description="个人中心--收藏查询")
 public class ShouchangDTO {
+
+    @ApiModelProperty(value = "用户ID")
+    @TableId(value = "uid", type = IdType.AUTO)
+    private Integer uid;
+
+    @ApiModelProperty(value = "收藏id")
+    private Integer favorite;
 
     @ApiModelProperty(value = "商品图片")
     private String picture;

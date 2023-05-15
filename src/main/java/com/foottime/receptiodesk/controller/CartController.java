@@ -3,6 +3,7 @@ package com.foottime.receptiodesk.controller;
 import com.foottime.common.CommonResult;
 import com.foottime.receptiodesk.dto.ProductDetailsDTO;
 import com.foottime.receptiodesk.service.IGoodsService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,6 +11,7 @@ import java.util.List;
 
 
 @RestController
+@Tag(name="购物车")
 @RequestMapping("/Cart")
 public class CartController {
 

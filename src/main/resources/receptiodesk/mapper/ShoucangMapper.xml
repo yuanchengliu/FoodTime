@@ -19,4 +19,26 @@
         favorite, uid, picture, text, name, collection, time, price
     </sql>
 
+
+    <!-- 多表联查 -->
+
+    <resultMap id="Shouchang" type="com.foottime.receptiodesk.dto.ShouchangDTO">
+        <result property="uid" column="uid"/>
+        <result property="favorite" column="favorite"/>
+        <result property="picture" column="picture"/>
+        <result property="text" column="text"/>
+        <result property="name" column="name"/>
+        <result property="time" column="time"/>
+        <result property="price" column="price"/>
+    </resultMap>
+
+    <select id="shoucangselect" resultMap="Shouchang">
+        SELECT
+            a.`picture` ,a.`text`,a.`name` ,a.`time` ,a.`price`
+        FROM
+            shoucang a,user c
+            WHERE
+            a.`uid`=c.`uid`
+          AND c.`uid`=${id}
+    </select>
 </mapper>

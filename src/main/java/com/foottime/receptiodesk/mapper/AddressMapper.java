@@ -1,8 +1,12 @@
 package com.foottime.receptiodesk.mapper;
 
+import com.foottime.receptiodesk.dto.Address_InformationDTO;
+import com.foottime.receptiodesk.dto.ProductDetailsDTO;
 import com.foottime.receptiodesk.entity.Address;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
+
+import java.util.List;
 
 /**
  * <p>
@@ -14,5 +18,8 @@ import org.apache.ibatis.annotations.Mapper;
  */
 @Mapper
 public interface AddressMapper extends BaseMapper<Address> {
-
+    /**
+     * 个人信息查询订单
+     */
+    List<Address_InformationDTO> address(Integer id);
 }

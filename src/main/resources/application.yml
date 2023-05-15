@@ -19,20 +19,20 @@ spring:
   thymeleaf:
     prefix: classpath:/templates/
 
-  redis:
-    host: 192.168.15.131
-    port: 6379
-    lettuce:
-      pool:
-        max-active: 10
-        max-idle: 10
-        min-idle: 1
-        time-between-eviction-runs: 10s
-    password: 123456
-    database: 0
-  cache:
-    redis:
-      time-to-live: 1800000
+#  redis:
+#    host: 192.168.116.132
+#    port: 6379
+#    lettuce:
+#      pool:
+#        max-active: 10
+#        max-idle: 10
+#        min-idle: 1
+#        time-between-eviction-runs: 10s
+##    password: 123456
+#    database: 0
+#  cache:
+#    redis:
+#      time-to-live: 1800000
 
 mybatis-plus:
   global-config:
