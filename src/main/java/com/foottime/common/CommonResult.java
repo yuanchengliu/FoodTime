@@ -33,7 +33,7 @@ public class CommonResult<T> {
         return new CommonResult<T>(ResultCode.SUCCESS.getCode(), ResultCode.SUCCESS.getMessage(), data);
     }
     public static <T> CommonResult<T> success(String message) {
-        return new CommonResult<T>(ResultCode.SUCCESS.getCode(), ResultCode.SUCCESS.getMessage());
+        return new CommonResult<T>(ResultCode.SUCCESS.getCode(), message);
     }
     /**
      * 成功返回结果

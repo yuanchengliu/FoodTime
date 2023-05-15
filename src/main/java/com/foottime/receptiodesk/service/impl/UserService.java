@@ -10,6 +10,7 @@ import com.foottime.receptiodesk.service.IUserService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -28,6 +29,7 @@ public class UserService extends ServiceImpl<UserMapper, User> implements IUserS
 
     @Autowired
     UserMapper userMapper;
+
 
 
     @Override

@@ -7,7 +7,10 @@ import com.foottime.receptiodesk.entity.User;
 import com.foottime.receptiodesk.service.IUserService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.web.bind.annotation.*;
+
+import javax.annotation.Resource;
 
 @RestController
 @RequestMapping("/Personal")
@@ -15,7 +18,8 @@ import org.springframework.web.bind.annotation.*;
 public class Personal {
     @Autowired
     IUserService userService;
-
+    @Resource
+    StringRedisTemplate stringRedisTemplate;
     /**
      * 登录
      * @param userLoginDTO
