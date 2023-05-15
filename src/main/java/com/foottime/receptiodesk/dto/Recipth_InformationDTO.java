@@ -10,7 +10,7 @@ import lombok.EqualsAndHashCode;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @ApiModel(value="RecipthInformationDto", description="收货人信息查询添加")
-public class RecipthInformationDTO {
+public class Recipth_InformationDTO {
     @ApiModelProperty(value = "收货人姓名")
     private String rname;
 

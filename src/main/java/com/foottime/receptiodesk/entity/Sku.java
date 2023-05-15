@@ -1,5 +1,6 @@
 package com.foottime.receptiodesk.entity;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.io.Serializable;
 import io.swagger.annotations.ApiModel;
@@ -28,17 +29,17 @@ public class Sku implements Serializable {
     @ApiModelProperty(value = "SKU名称")
     private String name;
 
-    @ApiModelProperty(value = "价格（分）")
-    private Integer price;
+//    @ApiModelProperty(value = "价格（分）")
+//    private BigDecimal price;
 
-    @ApiModelProperty(value = "库存数量")
-    private Integer num;
+//    @ApiModelProperty(value = "库存数量")
+//    private Integer num;
 
     @ApiModelProperty(value = "商品图片")
     private String image;
 
-    @ApiModelProperty(value = "商品图片列表")
-    private String images;
+//    @ApiModelProperty(value = "商品图片列表")
+//    private String images;
 
     @ApiModelProperty(value = "SPUID")
     private String spuId;

@@ -1,29 +1,30 @@
 package com.foottime.receptiodesk.controller;
 
 import com.foottime.common.CommonResult;
-import com.foottime.receptiodesk.service.IUserService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.foottime.receptiodesk.service.IForumService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
- * 设置页面
+ * 论坛详情页
  */
 @RestController
-@RequestMapping("/setup")
-public class Set_up {
-    @Autowired
-    IUserService userService;
+@Tag(name="用户文章详情页")
+@RequestMapping("forum_details")
+public class Forum_details {
+    @Resource
+    IForumService forumService;
     /**
-     * 设置页面-----个人信息
-     *
+     * 论坛详情页面
      */
-    @GetMapping("/setup_user")
+    @GetMapping("/forum")
     public CommonResult CarouselMap(){
-        List list = userService.selectuser();
+        List list = forumService.selectforum();
         return CommonResult.success(list);
     }
 }

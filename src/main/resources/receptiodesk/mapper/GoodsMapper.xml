@@ -23,9 +23,8 @@
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        gid,classify,id,gtitle,gdetails,gmanufacturer,gtime,grice,create_time,update_time,status,remake2,remake3,sales,storeid
+        gid,classify,id,gtitle,gdetails,sales,storeid,gmanufacturer,gtime,grice,create_time,update_time,status,remake2,remake3,sales,storeid
     </sql>
-
     <resultMap id="chatListMap" type="com.foottime.receptiodesk.dto.ShowproductlistDTO">
         <result property="gid" column="gid"/>
         <result property="gtitle" column="gtitle"/>
@@ -59,6 +58,32 @@
           AND a.gid = c.`id`
         ORDER BY RAND()
         LIMIT 0,6
+    </select>
+
+
+    <resultMap id="goodsDetailsMap" type="com.foottime.receptiodesk.dto.ProductDetailsDTO">
+        <result property="gid" column="gid"/>
+        <result property="gtitle" column="gtitle"/>
+        <result property="gdetails" column="gdetails"/>
+        <result property="name" column="name"/>
+        <result property="price" column="price"/>
+        <result property="stname" column="stname"/>
+        <result property="scture" column="scture"/>
+        <result property="num" column="num"/>
+        <result property="image" column="image"/>
+        <result property="qid" column="id"/>
+    </resultMap>
+
+    <select id="productDetails" resultMap="goodsDetailsMap">
+        SELECT
+            a.`gid` ,a.`gtitle` ,a.`gdetails`,c.`stname` ,c.`scture` ,d.`id` ,d.`image` ,d.`name` ,d.`num` ,d.`price`
+        FROM
+            goods a,shop c,sku_attribute d
+        WHERE
+            a.`storeid`=c.`storeid`
+          AND d.`gid`=a.`gid`
+          AND a.`gid`=${id}
+
     </select>
 
 </mapper>

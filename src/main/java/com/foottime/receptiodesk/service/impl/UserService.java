@@ -10,8 +10,10 @@ import com.foottime.receptiodesk.service.IUserService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -27,6 +29,7 @@ public class UserService extends ServiceImpl<UserMapper, User> implements IUserS
 
     @Autowired
     UserMapper userMapper;
+
 
 
     @Override
@@ -73,7 +76,17 @@ public class UserService extends ServiceImpl<UserMapper, User> implements IUserS
     @Override
     public List selectuser() {
         QueryWrapper<User> queryWrapper = new QueryWrapper<>();
-        queryWrapper.select("select upicture,unickname,uname FROM User");
+        queryWrapper.select("upicture","unickname","uname");
+        List<User> list = list(queryWrapper);
+        return list;
+    }
+    /**
+     * 个人中心---查询用户信息
+     */
+    @Override
+    public List selectuser1() {
+        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
+        queryWrapper.select("upicture","unickname");
         List<User> list = list(queryWrapper);
         return list;
     }
