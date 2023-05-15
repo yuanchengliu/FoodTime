@@ -10,7 +10,7 @@ import org.apache.ibatis.annotations.Mapper;
  * </p>
  *
  * @author receptiodesk
- * @since 2023-05-12
+ * @since 2023-05-14
  */
 @Mapper
 public interface ReceiptInformationMapper extends BaseMapper<ReceiptInformation> {

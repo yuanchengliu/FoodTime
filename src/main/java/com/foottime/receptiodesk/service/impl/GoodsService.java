@@ -32,13 +32,11 @@ import java.util.stream.Collectors;
 @Service
 public class GoodsService extends ServiceImpl<GoodsMapper, Goods> implements IGoodsService {
 
-
     @Resource
     GoodsMapper goodsMapper;
 
     @Resource
     StringRedisTemplate stringRedisTemplate;
-
 
     @Override
     public CommonPage<GoodsinfoDTO> selectpage(String searchResults, Integer pageNum, Integer pageSize) {
@@ -89,9 +87,7 @@ public class GoodsService extends ServiceImpl<GoodsMapper, Goods> implements IGo
     @Override
     public boolean addCart(ProductDetailsDTO productDetailsDTO, Integer uid) {
 
-        String s1 = stringRedisTemplate.opsForValue().get(uid);
-
-        String key = "Cart" + s1;
+        String key = "Cart" + uid;
 
         //遍历redis所有列表
         Set<String> range = stringRedisTemplate.opsForZSet().range(key, 0, -1);
@@ -132,9 +128,8 @@ public class GoodsService extends ServiceImpl<GoodsMapper, Goods> implements IGo
      */
     @Override
     public boolean subtract(ProductDetailsDTO productDetailsDTO, Integer uid) {
-        String s1 = stringRedisTemplate.opsForValue().get(uid);
 
-        String key = "Cart" + s1;
+        String key = "Cart" + uid;
 
 //        Set<String> range = stringRedisTemplate.opsForZSet().range(key, 0, -1);
 //
@@ -170,9 +165,7 @@ public class GoodsService extends ServiceImpl<GoodsMapper, Goods> implements IGo
 
     @Override
     public List<ProductDetailsDTO> inquireProducts(Integer uid) {
-        String s1 = stringRedisTemplate.opsForValue().get(uid);
-
-        String key = "Cart" + s1;
+        String key = "Cart" +uid;
         Set<String> range = stringRedisTemplate.opsForZSet().range(key, 0, -1);
 //        assert range != null;
 //        for (String s : range) {

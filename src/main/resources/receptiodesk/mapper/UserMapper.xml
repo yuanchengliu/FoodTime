@@ -6,17 +6,16 @@
     <resultMap id="BaseResultMap" type="com.foottime.receptiodesk.entity.User">
         <id column="uid" property="uid" />
         <result column="uname" property="uname" />
-        <result column="upwd" property="upwd" />
         <result column="unickname" property="unickname" />
         <result column="upicture" property="upicture" />
+        <result column="upwd" property="upwd" />
         <result column="usex" property="usex" />
         <result column="ubirthday" property="ubirthday" />
-
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        uid, uname, unickname,upicture,upwd, usex, ubirthday
+        uid, uname, unickname, upicture, upwd, usex, ubirthday
     </sql>
 
 </mapper>

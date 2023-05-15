@@ -7,6 +7,7 @@
         <id column="shopingid" property="shopingid" />
         <result column="uid" property="uid" />
         <result column="storeid" property="storeid" />
+        <result column="storeid_name" property="storeidName" />
         <result column="information" property="information" />
         <result column="pictures" property="pictures" />
         <result column="quantity" property="quantity" />
@@ -16,7 +17,7 @@
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        shopingid, uid, storeid, information, pictures, quantity, unit, amount
+        shopingid, uid, storeid, storeid_name, information, pictures, quantity, unit, amount
     </sql>
 
 </mapper>

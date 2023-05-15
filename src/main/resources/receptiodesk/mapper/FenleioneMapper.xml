@@ -4,6 +4,7 @@
 
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.foottime.receptiodesk.entity.Fenleione">
+        <id column="id" property="id" />
         <result column="brand" property="brand" />
         <result column="provinces" property="provinces" />
         <result column="price" property="price" />
@@ -15,7 +16,7 @@
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        brand, provinces, price, one, two, pictures, more
+        id, brand, provinces, price, one, two, pictures, more
     </sql>
 
 </mapper>

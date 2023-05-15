@@ -10,9 +10,8 @@ import org.apache.ibatis.annotations.Mapper;
  * </p>
  *
  * @author receptiodesk
- * @since 2023-05-10
+ * @since 2023-05-14
  */
-
 @Mapper
 public interface AdverimagesMapper extends BaseMapper<Adverimages> {
 

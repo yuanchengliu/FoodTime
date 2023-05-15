@@ -8,11 +8,12 @@
         <result column="address" property="address" />
         <result column="message" property="message" />
         <result column="time" property="time" />
+        <result column="official_name" property="officialName" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, address, message, time
+        id, address, message, time, official_name
     </sql>
 
 </mapper>

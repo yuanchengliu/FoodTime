@@ -11,12 +11,14 @@
         <result column="shoop" property="shoop" />
         <result column="status" property="status" />
         <result column="cart" property="cart" />
+        <result column="delivery" property="delivery" />
+        <result column="time" property="time" />
         <result column="logistics" property="logistics" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, store, pictures, commodity, shoop, status, cart, logistics
+        id, store, pictures, commodity, shoop, status, cart, delivery, time, logistics
     </sql>
 
 </mapper>

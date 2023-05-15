@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
  * </p>
  *
  * @author receptiodesk
- * @since 2023-05-13
+ * @since 2023-05-14
  */
 @Service
 public class NoticeService extends ServiceImpl<NoticeMapper, Notice> implements INoticeService {

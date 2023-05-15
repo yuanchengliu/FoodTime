@@ -12,7 +12,7 @@ import lombok.EqualsAndHashCode;
  * </p>
  *
  * @author receptiodesk
- * @since 2023-05-13
+ * @since 2023-05-14
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -27,13 +27,16 @@ public class ShoppingCart implements Serializable {
     @ApiModelProperty(value = "用户id")
     private Integer uid;
 
+    @ApiModelProperty(value = "店铺id")
+    private Integer storeid;
+
     @ApiModelProperty(value = "店铺名称")
-    private String storeid;
+    private String storeidName;
 
     @ApiModelProperty(value = "商品文字信息")
     private String information;
 
-    @ApiModelProperty(value = "商品图片")
+    @ApiModelProperty(value = "商品图片地址")
     private String pictures;
 
     @ApiModelProperty(value = "数量")

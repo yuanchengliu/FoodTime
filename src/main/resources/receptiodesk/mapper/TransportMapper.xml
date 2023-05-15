@@ -4,9 +4,11 @@
 
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.foottime.receptiodesk.entity.Transport">
-        <id column="tnumber" property="tnumber" />
+        <id column="shippingid" property="shippingid" />
+        <result column="tnumber" property="tnumber" />
         <result column="orderid" property="orderid" />
         <result column="status" property="status" />
+        <result column="time" property="time" />
         <result column="information" property="information" />
         <result column="carrier" property="carrier" />
         <result column="picture" property="picture" />
@@ -14,7 +16,7 @@
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        tnumber, orderid, status, information, carrier, picture
+        shippingid, tnumber, orderid, status, time, information, carrier, picture
     </sql>
 
 </mapper>

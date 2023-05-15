@@ -18,13 +18,12 @@ public class CartController {
 
     /**
      * 加入购物车
-     *
      * @param productDetailsDTO
      * @return
      */
     @GetMapping("/add")
     public CommonResult addcart(@RequestBody ProductDetailsDTO productDetailsDTO, @RequestParam Integer uid) {
-        boolean b = goodsService.addCart(productDetailsDTO, uid);
+        boolean b = goodsService.addCart(productDetailsDTO,uid);
         if (!b) {
             return CommonResult.failed("添加失败，请重试！");
         }
@@ -33,16 +32,15 @@ public class CartController {
 
     /**
      * 移除商品
-     *
      * @param productDetailsDTO
      * @param uid
      * @return
      */
 
     @GetMapping("/subtract")
-    public CommonResult subtract(@RequestBody ProductDetailsDTO productDetailsDTO, @RequestParam Integer uid) {
+    public CommonResult subtract(@RequestBody ProductDetailsDTO productDetailsDTO,@RequestParam Integer uid) {
         boolean subtract = goodsService.subtract(productDetailsDTO, uid);
-        if (subtract) {
+        if (subtract){
             return CommonResult.success("移除成功");
         }
         return CommonResult.failed("移除失败");
@@ -50,7 +48,7 @@ public class CartController {
 
 
     @GetMapping("/Inquire_products")
-    public CommonResult inquireProducts(@RequestParam Integer uid) {
+    public CommonResult inquireProducts(@RequestParam Integer uid){
         List<ProductDetailsDTO> list = goodsService.inquireProducts(uid);
         return CommonResult.success(list);
     }

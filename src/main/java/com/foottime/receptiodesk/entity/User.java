@@ -1,7 +1,7 @@
 package com.foottime.receptiodesk.entity;
 
-import java.time.LocalDate;
-import java.sql.Blob;
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import java.io.Serializable;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -14,7 +14,7 @@ import lombok.EqualsAndHashCode;
  * </p>
  *
  * @author receptiodesk
- * @since 2023-05-10
+ * @since 2023-05-14
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -24,27 +24,26 @@ public class User implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @ApiModelProperty(value = "用户ID")
+    @TableId(value = "uid", type = IdType.AUTO)
     private Integer uid;
 
     @ApiModelProperty(value = "用户账号")
     private String uname;
 
-    @ApiModelProperty(value = "用户密码")
-    private Integer upwd;
-
-    @ApiModelProperty(value = "用户名称")
+    @ApiModelProperty(value = "用户昵称")
     private String unickname;
 
     @ApiModelProperty(value = "用户头像")
     private String upicture;
 
+    @ApiModelProperty(value = "用户密码")
+    private Integer upwd;
+
     @ApiModelProperty(value = "用户性别(1:男 2：女 3：保密)")
     private Integer usex;
 
     @ApiModelProperty(value = "用户生日")
-    private LocalDate ubirthday;
-
-
+    private Integer ubirthday;
 
 
 }

@@ -14,11 +14,11 @@ import lombok.EqualsAndHashCode;
  * </p>
  *
  * @author receptiodesk
- * @since 2023-05-12
+ * @since 2023-05-14
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-@ApiModel(value="ReceiptInformation对象", description="收货人信息")
+@ApiModel(value="ReceiptInformation对象", description="")
 public class ReceiptInformation implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -27,7 +27,7 @@ public class ReceiptInformation implements Serializable {
     @TableId(value = "rid", type = IdType.AUTO)
     private Integer rid;
 
-    @ApiModelProperty(value = "收货人姓名")
+    @ApiModelProperty(value = "收货人信息")
     private String rname;
 
     @ApiModelProperty(value = "收货人电话")

@@ -15,7 +15,7 @@ import lombok.EqualsAndHashCode;
  * </p>
  *
  * @author receptiodesk
- * @since 2023-05-13
+ * @since 2023-05-14
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -34,6 +34,9 @@ public class Forum implements Serializable {
     @ApiModelProperty(value = "用户头像地址")
     private String heandpicture;
 
+    @ApiModelProperty(value = "发布的文字标题")
+    private String text;
+
     @ApiModelProperty(value = "发布的文字信息")
     private String message;
 
@@ -48,6 +51,9 @@ public class Forum implements Serializable {
 
     @ApiModelProperty(value = "点赞数")
     private Integer likes;
+
+    @ApiModelProperty(value = "分享数")
+    private Integer shares;
 
     @ApiModelProperty(value = "待扩充字段")
     private String remake1;

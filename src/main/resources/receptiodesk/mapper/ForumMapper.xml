@@ -7,18 +7,23 @@
         <id column="fid" property="fid" />
         <result column="fname" property="fname" />
         <result column="heandpicture" property="heandpicture" />
+        <result column="text" property="text" />
         <result column="message" property="message" />
         <result column="picture" property="picture" />
         <result column="publication" property="publication" />
         <result column="collections" property="collections" />
         <result column="likes" property="likes" />
+        <result column="shares" property="shares" />
         <result column="remake1" property="remake1" />
         <result column="remake2" property="remake2" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        fid, fname, heandpicture, message, picture, publication, collections, likes, remake1, remake2
+        fid, fname, heandpicture, text, message, picture, publication, collections, likes, shares, remake1, remake2
     </sql>
+<!--    <select id="queryById" resultMap="BaseResultMap">-->
+<!--        SELECT text, publication FROM forum WHERE fid = #{fid}-->
+<!--    </select>-->
 
 </mapper>

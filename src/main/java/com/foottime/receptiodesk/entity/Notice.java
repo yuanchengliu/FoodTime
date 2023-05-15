@@ -13,7 +13,7 @@ import lombok.EqualsAndHashCode;
  * </p>
  *
  * @author receptiodesk
- * @since 2023-05-13
+ * @since 2023-05-14
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -28,11 +28,14 @@ public class Notice implements Serializable {
     @ApiModelProperty(value = "图片地址")
     private String address;
 
-    @ApiModelProperty(value = "文字信息")
+    @ApiModelProperty(value = "官方消息文字详情信息")
     private String message;
 
     @ApiModelProperty(value = "发布时间")
     private BigDecimal time;
+
+    @ApiModelProperty(value = "官方消息名称")
+    private String officialName;
 
 
 }

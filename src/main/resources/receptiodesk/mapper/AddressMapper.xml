@@ -7,6 +7,9 @@
         <id column="orderid" property="orderid" />
         <result column="shppingnumber" property="shppingnumber" />
         <result column="aid" property="aid" />
+        <result column="shop_picture" property="shopPicture" />
+        <result column="name" property="name" />
+        <result column="details" property="details" />
         <result column="ostatus" property="ostatus" />
         <result column="pstatus" property="pstatus" />
         <result column="createTime" property="createtime" />
@@ -20,7 +23,7 @@
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        orderid, shppingnumber, aid, ostatus, pstatus, createTime, method, givetime, address, items, number, amount
+        orderid, shppingnumber, aid, shop_picture, name, details, ostatus, pstatus, createTime, method, givetime, address, items, number, amount
     </sql>
 
 </mapper>

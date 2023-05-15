@@ -8,12 +8,15 @@
         <result column="uid" property="uid" />
         <result column="picture" property="picture" />
         <result column="text" property="text" />
+        <result column="name" property="name" />
+        <result column="collection" property="collection" />
+        <result column="time" property="time" />
         <result column="price" property="price" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        favorite, uid, picture, text, price
+        favorite, uid, picture, text, name, collection, time, price
     </sql>
 
 </mapper>

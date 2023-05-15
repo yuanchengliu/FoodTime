@@ -34,6 +34,7 @@ public class UserService extends ServiceImpl<UserMapper, User> implements IUserS
     @Resource
     StringRedisTemplate stringRedisTemplate;
 
+
     @Override
     public User login(String uname, Integer upwd) {
         QueryWrapper<User> queryWrapper = new QueryWrapper<>();
@@ -41,9 +42,9 @@ public class UserService extends ServiceImpl<UserMapper, User> implements IUserS
                 .eq(User::getUname,uname)
                 .eq(User::getUpwd,upwd);
         User one = getOne(queryWrapper);
-        User user = userMapper.selectOne(queryWrapper);
-        String key = "User"+user.getUid();
-        stringRedisTemplate.opsForValue().set(key, JSONUtil.toJsonStr(user));
+        String key = "User"+one.getUid();
+        stringRedisTemplate.opsForValue().set(key, JSONUtil.toJsonStr(one));
+
         return one;
     }
 
@@ -81,7 +82,17 @@ public class UserService extends ServiceImpl<UserMapper, User> implements IUserS
     @Override
     public List selectuser() {
         QueryWrapper<User> queryWrapper = new QueryWrapper<>();
-        queryWrapper.select("select upicture,unickname,uname FROM User");
+        queryWrapper.select("upicture","unickname","uname");
+        List<User> list = list(queryWrapper);
+        return list;
+    }
+    /**
+     * 个人中心---查询用户信息
+     */
+    @Override
+    public List selectuser1() {
+        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
+        queryWrapper.select("upicture","unickname");
         List<User> list = list(queryWrapper);
         return list;
     }

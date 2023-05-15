@@ -6,14 +6,13 @@
     <resultMap id="BaseResultMap" type="com.foottime.receptiodesk.entity.Adverimages">
         <id column="imageid" property="imageid" />
         <result column="imageurl" property="imageurl" />
-        <result column="catid" property="catid" />
+        <result column="category" property="category" />
         <result column="remake" property="remake" />
-
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        imageid, imageurl, catid, remake
+        imageid, imageurl, category, remake
     </sql>
 
 </mapper>

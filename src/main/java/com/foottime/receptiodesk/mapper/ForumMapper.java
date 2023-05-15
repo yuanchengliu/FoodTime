@@ -1,8 +1,11 @@
 package com.foottime.receptiodesk.mapper;
 
+
 import com.foottime.receptiodesk.entity.Forum;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
+
+
 
 /**
  * <p>
@@ -10,9 +13,10 @@ import org.apache.ibatis.annotations.Mapper;
  * </p>
  *
  * @author receptiodesk
- * @since 2023-05-13
+ * @since 2023-05-14
  */
 @Mapper
 public interface ForumMapper extends BaseMapper<Forum> {
+
 
 }

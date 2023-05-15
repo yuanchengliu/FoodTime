@@ -1,5 +1,6 @@
 package com.foottime.receptiodesk.entity;
 
+import java.time.LocalDateTime;
 import java.io.Serializable;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -12,7 +13,7 @@ import lombok.EqualsAndHashCode;
  * </p>
  *
  * @author receptiodesk
- * @since 2023-05-13
+ * @since 2023-05-14
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -40,7 +41,13 @@ public class Logistics implements Serializable {
     private String status;
 
     @ApiModelProperty(value = "是否加入购物车1:是 2:否")
-    private Integer cart;
+    private String cart;
+
+    @ApiModelProperty(value = "是否延长收货时间")
+    private LocalDateTime delivery;
+
+    @ApiModelProperty(value = "延长的时间")
+    private LocalDateTime time;
 
     @ApiModelProperty(value = "物流状态")
     private String logistics;

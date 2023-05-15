@@ -1,5 +1,7 @@
 package com.foottime.receptiodesk.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import java.time.LocalDateTime;
 import com.baomidou.mybatisplus.annotation.TableField;
 import java.io.Serializable;
@@ -14,16 +16,17 @@ import lombok.EqualsAndHashCode;
  * </p>
  *
  * @author receptiodesk
- * @since 2023-05-13
+ * @since 2023-05-14
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-@ApiModel(value="Address对象", description="收货信息")
+@ApiModel(value="Address", description="收货信息")
 public class Address implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @ApiModelProperty(value = "订单号")
+    @TableId(value = "orderid", type = IdType.AUTO)
     private Integer orderid;
 
     @ApiModelProperty(value = "运输单号")
@@ -31,6 +34,15 @@ public class Address implements Serializable {
 
     @ApiModelProperty(value = "用户ID")
     private Integer aid;
+
+    @ApiModelProperty(value = "商品图片")
+    private String shopPicture;
+
+    @ApiModelProperty(value = "商品名称")
+    private String name;
+
+    @ApiModelProperty(value = "商品详情")
+    private String details;
 
     @ApiModelProperty(value = "订单状态")
     private String ostatus;
