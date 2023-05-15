@@ -28,9 +28,9 @@ public interface IGoodsService extends IService<Goods> {
 
     List<ProductDetailsDTO> productDetails(Integer id);
 
-    boolean  addCart(ProductDetailsDTO productDetailsDTO,Integer num);
+    boolean  addCart(ProductDetailsDTO productDetailsDTO,Integer uid);
 
-    boolean subtract(ProductDetailsDTO productDetailsDTO,Integer num);
+    boolean subtract(ProductDetailsDTO productDetailsDTO,Integer uid);
 
     List<ProductDetailsDTO> inquireProducts(Integer uid);
 }

@@ -85,9 +85,8 @@ public class GoodsService extends ServiceImpl<GoodsMapper, Goods> implements IGo
     }
 
     @Override
-    public boolean addCart(ProductDetailsDTO productDetailsDTO, Integer num) {
+    public boolean addCart(ProductDetailsDTO productDetailsDTO, Integer uid) {
 
-        int uid = 1123;
         String key = "Cart" + uid;
 
         //遍历redis所有列表
@@ -124,14 +123,12 @@ public class GoodsService extends ServiceImpl<GoodsMapper, Goods> implements IGo
     /**
      * 待
      * @param productDetailsDTO
-     * @param num
+     * @param uid
      * @return
      */
     @Override
-    public boolean subtract(ProductDetailsDTO productDetailsDTO, Integer num) {
-//        User user = new User();
-//        Integer uid = user.getUid();
-        int uid = 1123;
+    public boolean subtract(ProductDetailsDTO productDetailsDTO, Integer uid) {
+
         String key = "Cart" + uid;
 
 //        Set<String> range = stringRedisTemplate.opsForZSet().range(key, 0, -1);
@@ -156,24 +153,19 @@ public class GoodsService extends ServiceImpl<GoodsMapper, Goods> implements IGo
         assert range != null;
         for (String s : range) {
             ProductDetailsDTO toBean = JSONUtil.toBean(s, ProductDetailsDTO.class);
-            if (num == 1) {
                 if (toBean.getQid().equals(productDetailsDTO.getQid())) {
                     stringRedisTemplate.opsForZSet().remove(key, JSONUtil.toJsonStr(toBean));
                     return true;
                 }
                 return false;
             }
-            else {
                 stringRedisTemplate.delete(key);
-                return true;
-            }
-        }
         return false;
     }
 
     @Override
     public List<ProductDetailsDTO> inquireProducts(Integer uid) {
-        String key = "Cart" + uid;
+        String key = "Cart" +uid;
         Set<String> range = stringRedisTemplate.opsForZSet().range(key, 0, -1);
 //        assert range != null;
 //        for (String s : range) {
