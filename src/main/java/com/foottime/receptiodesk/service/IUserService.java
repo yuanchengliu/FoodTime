@@ -35,10 +35,4 @@ public interface IUserService extends IService<User> {
      * 设置---查询用户信息
      */
   List selectuser();
-
-
-    /**
-     * 个人中心---查询用户信息
-     */
-  List selectuser1();
 }

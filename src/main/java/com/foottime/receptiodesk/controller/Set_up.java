@@ -13,7 +13,7 @@ import java.util.List;
  * 设置页面
  */
 @RestController
-@RequestMapping("/setup")
+@RequestMapping("setup")
 public class Set_up {
     @Autowired
     IUserService userService;

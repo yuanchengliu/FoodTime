@@ -3,7 +3,7 @@ package com.foottime.receptiodesk.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.foottime.common.CommonPage;
-import com.foottime.receptiodesk.dto.Recipth_InformationDTO;
+import com.foottime.receptiodesk.dto.RecipthInformationDTO;
 import com.foottime.receptiodesk.entity.ReceiptInformation;
 import com.foottime.receptiodesk.mapper.ReceiptInformationMapper;
 import com.foottime.receptiodesk.service.IReceiptInformationService;
@@ -35,7 +35,7 @@ public class ReceiptInformationService extends ServiceImpl<ReceiptInformationMap
      * @return 分页
      */
     @Override
-    public CommonPage<Recipth_InformationDTO> selectLikeAll(String val, Integer pageSize, Integer pageNum) {
+    public CommonPage<RecipthInformationDTO> selectLikeAll(String val, Integer pageSize, Integer pageNum) {
         Page<ReceiptInformation> page = new Page<>(pageNum, pageSize);
         //         val传入有值 QueryWrapper模糊查询并 如果val没有传入值则就只执行分页查询
         QueryWrapper<ReceiptInformation> wrapper = new QueryWrapper<>();
@@ -45,20 +45,20 @@ public class ReceiptInformationService extends ServiceImpl<ReceiptInformationMap
                     .or().like(ReceiptInformation::getRaddress, val);
         }
         else {
-            wrapper.select("rname,rphone,raddress");
+            wrapper.select("rname,rphone,paddress");
         }
         //        将查询出来的数据与传入的分页的条件page 进行分页
         mapper.selectPage(page, wrapper);
         //        将分页出来的数据封装进list
         List<ReceiptInformation> list = page.getRecords();
         //        通过String流的方式将查询出来的数据封装进DTO
-        List<Recipth_InformationDTO> collect = list.stream().map((itme) -> {
-            Recipth_InformationDTO informationDTO = new Recipth_InformationDTO();
+        List<RecipthInformationDTO> collect = list.stream().map((itme) -> {
+            RecipthInformationDTO informationDTO = new RecipthInformationDTO();
             BeanUtils.copyProperties(itme, informationDTO);
             return informationDTO;
         }).collect(Collectors.toList());
         //        将page数据和DOT数据返回给封装的分页方法
-        CommonPage<Recipth_InformationDTO> commonPage = new CommonPage<>();
+        CommonPage<RecipthInformationDTO> commonPage = new CommonPage<>();
         commonPage.setPageNum(pageNum);
         commonPage.setPageSize(pageSize);
         commonPage.setTotalPage((int) page.getPages());
@@ -72,7 +72,7 @@ public class ReceiptInformationService extends ServiceImpl<ReceiptInformationMap
      * @return 添加信息
      */
     @Override
-    public Recipth_InformationDTO addrecipth(Recipth_InformationDTO informationDTO) {
+    public RecipthInformationDTO addrecipth(RecipthInformationDTO informationDTO) {
         ReceiptInformation information = new ReceiptInformation();
         BeanUtils.copyProperties(informationDTO,information);
         QueryWrapper<ReceiptInformation> wrapper = new QueryWrapper<>();

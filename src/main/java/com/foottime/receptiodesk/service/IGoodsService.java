@@ -1,11 +1,10 @@
 package com.foottime.receptiodesk.service;
 
-import com.baomidou.mybatisplus.extension.service.IService;
 import com.foottime.common.CommonPage;
 import com.foottime.receptiodesk.dto.GoodsinfoDTO;
-import com.foottime.receptiodesk.dto.ProductDetailsDTO;
 import com.foottime.receptiodesk.dto.ShowproductlistDTO;
 import com.foottime.receptiodesk.entity.Goods;
+import com.baomidou.mybatisplus.extension.service.IService;
 
 import java.util.List;
 
@@ -25,12 +24,4 @@ public interface IGoodsService extends IService<Goods> {
     List<ShowproductlistDTO> selectrecommend();
 
     List<ShowproductlistDTO> categoryQueries(String category);
-
-    List<ProductDetailsDTO> productDetails(Integer id);
-
-    boolean  addCart(ProductDetailsDTO productDetailsDTO,Integer num);
-
-    boolean subtract(ProductDetailsDTO productDetailsDTO,Integer num);
-
-    List<ProductDetailsDTO> inquireProducts(Integer uid);
 }

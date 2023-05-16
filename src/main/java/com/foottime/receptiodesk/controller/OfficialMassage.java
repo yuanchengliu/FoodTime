@@ -32,27 +32,24 @@ public class OfficialMassage {
     //官方消息
     @GetMapping("/getOfficialMssage")
     public CommonResult<CommonPage<OfficialDTO>> getallmassage(@RequestParam(value = "pageNum",defaultValue = "5") Integer pageNum,
-                                                               @RequestParam(value = "pageSize",defaultValue = "1") Integer pageSize,
-                                                               @RequestParam(required = false) String searchResults){
-    CommonPage<OfficialDTO> page =iOfficialService.getOfficial(pageNum,pageSize,searchResults);
+                                                               @RequestParam(value = "pageSize",defaultValue = "1") Integer pageSize){
+    CommonPage<OfficialDTO> page =iOfficialService.getOfficial(pageNum,pageSize);
     return CommonResult.success(page);
     }
 
     //通知消息
     @GetMapping("/getnoticeMassage")
     public CommonResult<CommonPage<NoticeDTO>> getnoticeMassage(@RequestParam(value = "pageNum",defaultValue = "5") Integer pageNum,
-                                                                @RequestParam(value = "pageSize",defaultValue = "1") Integer pageSize,
-                                                                @RequestParam(required = false) String searchResults){
-        CommonPage<NoticeDTO> page = iNoticeService.seleAll(pageNum,pageSize,searchResults);
+                                                                @RequestParam(value = "pageSize",defaultValue = "1") Integer pageSize){
+        CommonPage<NoticeDTO> page = iNoticeService.seleAll(pageNum,pageSize);
         return CommonResult.success(page);
     }
 
     //物流详情
     @GetMapping("/logisticsMassage")
     public CommonResult<CommonPage<AddressDTO>> getlogisticsMassage(@RequestParam(value = "pageNum",defaultValue = "5") Integer pageNum,
-                                                                    @RequestParam(value = "pageSize",defaultValue = "1") Integer pageSize,
-                                                                    @RequestParam(required = false) String searchResults){
-        CommonPage<AddressDTO> page = iOfficialService.seleAllAddress(pageNum,pageSize,searchResults);
+                                                                    @RequestParam(value = "pageSize",defaultValue = "1") Integer pageSize){
+        CommonPage<AddressDTO> page = iOfficialService.seleAllAddress(pageNum,pageSize);
         return CommonResult.success(page);
     }
 

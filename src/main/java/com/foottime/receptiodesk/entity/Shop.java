@@ -31,13 +31,8 @@ public class Shop implements Serializable {
     @ApiModelProperty(value = "商品文字信息")
     private String stext;
 
-
-
-    // TODO 更新
-    @ApiModelProperty(value = "店铺图片地址")
-    private String scture;
-
-
+    @ApiModelProperty(value = "商品图片地址")
+    private String picture;
 
     @ApiModelProperty(value = "单价")
     private Integer unit;
